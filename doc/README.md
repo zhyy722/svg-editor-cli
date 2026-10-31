@@ -28,7 +28,7 @@ pnpm cli
 pnpm cli --script examples/flowchart.txt
 ```
 
-生成的 [flowchart.svg](../examples/flowchart.svg) 可直接用浏览器打开。脚本中的每条命令及预期结构都可查看 [flowchart.txt](../examples/flowchart.txt)。
+生成的 [flowchart.svg](https://github.com/zhyy722/svg-editor-cli/blob/final/examples/flowchart.svg) 可直接用浏览器打开。脚本中的每条命令及预期结构都可查看 [flowchart.txt](https://github.com/zhyy722/svg-editor-cli/blob/final/examples/flowchart.txt)。
 
 最小交互示例：
 
@@ -59,9 +59,9 @@ save demo.svg
 | `test` | 三组 Node.js 测试文件 | 应用行为、真实 CLI 与文件系统、架构约束回归 |
 | `examples` / `doc` | 会话脚本、SVG、本文及 PlantUML | 可回放示例与设计依据 |
 
-组件图箭头表示源码依赖方向。图由同目录 [architecture.puml](architecture.puml) 生成：
+组件图箭头表示源码依赖方向。图由 [architecture.puml](https://github.com/zhyy722/svg-editor-cli/blob/final/doc/architecture.puml) 生成；图片使用固定版本的绝对地址，单独提交本文也可以访问：
 
-![PlantUML 组件依赖图](architecture.svg)
+![PlantUML 组件依赖图](https://raw.githubusercontent.com/zhyy722/svg-editor-cli/final/doc/architecture.svg)
 
 ```plantuml
 @startuml
