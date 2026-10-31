@@ -1,0 +1,21 @@
+@startuml
+skinparam componentStyle rectangle
+left to right direction
+component cli
+component parsing
+component commands
+component application
+component domain
+component infrastructure
+cli --> parsing
+cli --> infrastructure
+cli --> application
+parsing --> commands
+parsing --> application
+parsing --> domain
+commands --> application
+commands --> domain
+application --> domain
+infrastructure --> application
+infrastructure --> domain
+@enduml
