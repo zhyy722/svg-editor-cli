@@ -5,6 +5,7 @@ export abstract class NumericShape extends Shape {
   protected constructor(id:string, attrs:Readonly<Record<string,string>>, private readonly xKeys:readonly string[], private readonly yKeys:readonly string[], keys:readonly string[], private readonly sizes:readonly string[]) {
     super(id, attrs);
     for (const key of keys) {
+      if(attrs[key]!==undefined&&!attrs[key]!.trim())throw new Error(`${key} must be numeric`);
       const number = Number(attrs[key] ?? '0');
       this.finite(number);
       if (sizes.includes(key) && number < 0) throw new Error(`${key} must be nonnegative`);
@@ -16,6 +17,7 @@ export abstract class NumericShape extends Shape {
   }
   override set(attr:string,value:string):void {
     if (!Object.hasOwn(this.geometry ?? {},attr)) { super.set(attr,value); return; }
+    if(!value.trim())throw new Error(`${attr} must be numeric`);
     const number=Number(value);this.finite(number);
     if (this.sizes.includes(attr) && number<0) throw new Error(`${attr} must be nonnegative`);
     this.geometry[attr]=number;
