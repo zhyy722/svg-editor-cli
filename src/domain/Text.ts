@@ -9,6 +9,7 @@ export class Text extends NumericShape {
   }
   override get tag():string{return 'text';}
   override get content():string{return this.label;}
+  protected override describeContent():string{return ' '+JSON.stringify(this.content);}
   override get attributes():Readonly<Record<string,string>>{return {...super.attributes,...this.presentation};}
   override set(attr:string,value:string):void{if(attr==='text') this.label=value;else super.set(attr,value);}
   override clone():Text{return new Text(this.id,this.attributes,this.content);}

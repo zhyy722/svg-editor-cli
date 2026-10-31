@@ -7,8 +7,8 @@
   "engines": { "node": ">=22" },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "cli": "node dist/cli/main.js",
-    "test": "pnpm run build && node --test test/*.test.mjs"
+    "cli": "node dist/cli/Main.js",
+    "test": "tsc -p tsconfig.json && node --test test/*.test.mjs"
   },
   "dependencies": { "@xmldom/xmldom": "^0.8.11" },
   "devDependencies": { "typescript": "~5.9.3", "@types/node": "^22.0.0" }

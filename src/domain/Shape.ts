@@ -33,11 +33,12 @@ export abstract class Shape {
   protected factor(value: number): void { if (!Number.isFinite(value) || value <= 0) throw new Error('scale factor must be positive'); }
   attach(parent: Group | null): void { this.owner = parent; }
   isAncestorOf(other: Shape): boolean {
-    for (let current = other.parent; current; current = current.parent) if (current === this) return true;
+    for (let current: Shape | null = other.parent; current; current = current.parent) if (current === this) return true;
     return false;
   }
   describe(): string {
     const entries = Object.entries(this.attributes).map(([k,v])=>`${k}=${v}`).join(' ');
-    return `${this.tag}#${this.id}${entries ? '  '+entries : ''}${this.tag === 'text' ? ' '+JSON.stringify(this.content) : ''}`;
+    return `${this.tag}#${this.id}${entries ? '  '+entries : ''}${this.describeContent()}`;
   }
+  protected describeContent():string{return '';}
 }
