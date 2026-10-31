@@ -1,0 +1,6 @@
+node_modules/
+dist/
+coverage/
+phase_cli_1.md
+.tools/
+*.tmp
