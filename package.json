@@ -4,12 +4,20 @@
   "private": true,
   "type": "module",
   "description": "Lab1 Phase 1: object-oriented SVG command-line editor",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "cli": "node dist/cli/Main.js",
     "test": "tsc -p tsconfig.json && node --test test/*.test.mjs"
   },
-  "dependencies": { "@xmldom/xmldom": "^0.8.11" },
-  "devDependencies": { "typescript": "~5.9.3", "@types/node": "^22.0.0" }
+  "dependencies": {
+    "@xmldom/xmldom": "^0.8.11"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "prettier": "^3.9.10",
+    "typescript": "~5.9.3"
+  }
 }
